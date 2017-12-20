@@ -1,0 +1,8 @@
+*.npy
+/db
+/db/*/*.npy
+images/*/*.jpg
+images/.DS_Store
+images/*/.DS_Store
+*.pyc
+*.h5
