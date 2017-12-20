@@ -9,10 +9,10 @@ def one_random_split(dev_size, test_size):
     Author: Trinh Man Hoang
     :param  dev_size : size of dev_set < 1
     :return:
-        X_train, X_dev, Y_train, Y_dev respectively
+        X_train, X_dev, X_test, Y_train, Y_dev, Y_test respectively
     :usage:
         from . import train_dev_split as spl
-        X, Y = spl.one_random_split(devsize)
+        X, Y = spl.one_random_split(dev_size, test_size)
     """
 
     i_l_ROOT = 'images'
@@ -45,11 +45,12 @@ def k_split_sample(k_set, dev_size, test_size):
     Author: Trinh Man Hoang
     :param  k_set: #train_split sets
             dev_size : size of dev_set < 1
+            test_size : size of test_set < 1
     :return:
         k_set folders (in db_Root) contains random splitting
     :usage:
         from . import train_dev_split as spl
-        spl.k_split_sample(kset, devsize)
+        spl.k_split_sample(k_set, dev_size, test_size)
     """
 
 

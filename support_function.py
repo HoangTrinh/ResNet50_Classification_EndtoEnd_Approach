@@ -4,6 +4,18 @@ from keras import backend as K
 import os
 
 def save_data(db_direct, datatype):
+    """
+    Author: Trinh Man Hoang
+    :param  db_direct : direction of data folder
+            datatype : train, dev, test
+    :return:
+        two .npy files contain encoded data and encoded labels at db_direct correlate to datatype
+    :usage:
+        from . import support_function as sp
+        sp.save_data()
+    """
+
+
     img_width, img_height = 150, 150
     X = []
 
@@ -34,6 +46,17 @@ def save_data(db_direct, datatype):
 
 
 def load_data(db_direct):
+    """
+        Author: Trinh Man Hoang
+        :param  db_direct : direction of data folder
+        :return:
+            Six numpy array contain encoded data and encoded labels at db_direct correlate to datatype
+        :usage:
+            from . import support_function as sp
+            X,Y, ... = sp.load_data()
+    """
+
+
     X_train = np.load(os.path.join(db_direct,'train_image_data.npy'))
     Y_train = np.load(os.path.join(db_direct,'train_image_label_one_hot.npy'))
     X_dev = np.load(os.path.join(db_direct, 'dev_image_data.npy'))
@@ -43,8 +66,6 @@ def load_data(db_direct):
     return X_train, Y_train, X_dev, Y_dev, X_test, Y_test
 
 
-
-#X_train, Y_train, X_dev, Y_dev, X_test, Y_test = load_data('db/db0')
 
 # db_Root = 'db'
 # db_folders = os.listdir(db_Root)
